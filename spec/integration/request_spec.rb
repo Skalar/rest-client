@@ -14,7 +14,7 @@ describe RestClient::Request do
       request = RestClient::Request.new(
         :method => :get,
         :url => 'https://www.mozilla.org',
-        :ssl_ca_file => File.join(File.dirname(__FILE__), "certs", "digicert.crt")
+        :ssl_ca_file => File.join(File.dirname(__FILE__), "certs", "amazon.crt")
       )
       expect { request.execute }.to_not raise_error
     end
@@ -23,7 +23,7 @@ describe RestClient::Request do
       request = RestClient::Request.new(
         :method => :get,
         :url => 'https://www.mozilla.org',
-        :ssl_ca_path => File.join(File.dirname(__FILE__), "capath_digicert")
+        :ssl_ca_path => File.join(File.dirname(__FILE__), "capath_amazon")
       )
       expect { request.execute }.to_not raise_error
     end
